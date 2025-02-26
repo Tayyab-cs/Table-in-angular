@@ -1,0 +1,55 @@
+<h2 mat-dialog-title>{{data ? 'Edit Car' : 'Add New Car'}}</h2>
+<mat-dialog-content class="mat-typography">
+  <mat-form-field style="margin: 4px">
+    <mat-label>Make</mat-label>
+    <input matInput [(ngModel)]="newCar.make" />
+  </mat-form-field>
+  <mat-form-field style="margin: 4px">
+    <mat-label>Model</mat-label>
+    <input matInput [(ngModel)]="newCar.model" />
+  </mat-form-field>
+  <mat-form-field style="margin: 4px">
+    <mat-label>Year</mat-label>
+    <input matInput [(ngModel)]="newCar.year" />
+  </mat-form-field>
+  <mat-form-field style="margin: 4px">
+    <mat-label>Color</mat-label>
+    <input matInput [(ngModel)]="newCar.color" />
+  </mat-form-field>
+  <mat-form-field style="margin: 4px">
+    <mat-label>Mileage</mat-label>
+    <input matInput [(ngModel)]="newCar.mileage" />
+  </mat-form-field>
+  <mat-form-field style="margin: 4px">
+    <mat-label>Price</mat-label>
+    <input matInput [(ngModel)]="newCar.price" />
+  </mat-form-field>
+  <mat-form-field style="margin: 4px">
+    <mat-label>Fuel Type</mat-label>
+    <mat-select [(ngModel)]="newCar.fuel_type" >
+      <mat-option value="Gasoline">Gasoline</mat-option>
+      <mat-option value="Diesel">Diesel</mat-option>
+      <mat-option value="Electric">Electric</mat-option>
+      <mat-option value="Hybrid">Hybrid</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field style="margin: 4px">
+    <mat-label>Transmission</mat-label>
+    <mat-select [(ngModel)]="newCar.transmission" >
+      <mat-option value="Automatic">Automatic</mat-option>
+      <mat-option value="Manual">Manual</mat-option>
+      <mat-option value="CVT">CVT</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field style="margin: 4px">
+    <mat-label>Status</mat-label>
+    <mat-select [(ngModel)]="newCar.status" >
+      <mat-option value="Available">Available</mat-option>
+      <mat-option value="Sold">Sold</mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="newCar" cdkFocusInitial>Add</button>
+</mat-dialog-actions>
