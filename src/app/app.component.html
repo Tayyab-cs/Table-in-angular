@@ -1,6 +1,6 @@
 <div style="margin: 10px">
   <div
-    style="display: flex; flex-direction: row; gap: 10px; align-items: center;"
+    style="display: flex; flex-direction: row; gap: 10px; align-items: center"
   >
     <mat-form-field appearance="outline" style="width: 100%">
       <mat-label>Search</mat-label>
@@ -34,7 +34,11 @@
       </td>
     </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr
+      mat-header-row
+      *matHeaderRowDef="displayedColumns"
+      style="font-weight: bold; text-transform: uppercase"
+    ></tr>
     <tr
       mat-row
       *matRowDef="let row; columns: displayedColumns"
@@ -51,16 +55,18 @@
   ></mat-paginator>
 </div>
 
-<div>
-  <h3>Click Log</h3>
-</div>
+<div style="margin: 10px; padding: 10px; border: 2px; border-color: black; border-radius: 10px; border-style: dashed;">
+  <div>
+    <h3>Click Log</h3>
+  </div>
 
-@if (!clickedRows.size) {
-<div>Clicked rows will be logged here</div>
-}
-
-<ul>
-  @for (clickedRow of clickedRows; track clickedRow) {
-  <li>Clicked on {{ clickedRow.make }}</li>
+  @if (!clickedRows.size) {
+  <div>Clicked rows will be logged here</div>
   }
-</ul>
+
+  <ul>
+    @for (clickedRow of clickedRows; track clickedRow) {
+    <li>Clicked on {{ clickedRow.make }}</li>
+    }
+  </ul>
+</div>
